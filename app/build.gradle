@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'y.mubarki.applicationyareen'
-    compileSdk {
+    compileSdk  {
         version = release(37)
     }
 
