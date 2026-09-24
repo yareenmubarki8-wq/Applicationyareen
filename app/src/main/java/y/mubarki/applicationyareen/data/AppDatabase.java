@@ -52,11 +52,12 @@ public abstract class AppDatabase extends RoomDatabase {
         if (db == null) {
             db = Room.databaseBuilder(context,
                             AppDatabase.class,
-                            "samihDataBase") // اسم قاعدة البيانات
+                            "yareenDataBase") // اسم قاعدة البيانات
                     .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
                     .build();
         }
         return db;
     }
+
 }
