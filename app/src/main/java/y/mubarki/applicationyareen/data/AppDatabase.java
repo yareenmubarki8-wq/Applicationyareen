@@ -60,14 +60,6 @@ public abstract class AppDatabase extends RoomDatabase {
         return db;
     }
 
-    public static class AppDataBase {
-        public static AppDataBase getdb(Context applicationContext) {
 
-            return null;
-        }
-
-        public MySubjectQuery getMySubjectQuery() {
-            return null;
-        }
-    }}
+}
 

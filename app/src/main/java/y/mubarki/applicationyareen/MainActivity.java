@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         //بناء قاعدة بيانات وارجاع مؤشر عليها1
-        AppDatabase.AppDataBase db= AppDatabase.AppDataBase.getdb(getApplicationContext());
+        AppDatabase db= AppDatabase.getDB(getApplicationContext());
         //2 مؤشر لكائن عمليات  لجدول
         MySubjectQuery subjectQuery = db.getMySubjectQuery();
         //3  بناء كائن من نوع الجدول وتحديد قيم الصفات

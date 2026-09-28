@@ -2,9 +2,11 @@ package y.mubarki.applicationyareen.data.MyUserTable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity
 public class MyUser {
+    @PrimaryKey(autoGenerate = true)
     public long keyid;
     @ColumnInfo(name = "full_Name")//اعطاء اسم جديد للعامود-الصفة في الجدول
     public String fullName;
