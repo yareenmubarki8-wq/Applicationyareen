@@ -1,5 +1,6 @@
 package y.mubarki.applicationyareen.data.mytasksTable;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -16,7 +17,7 @@ public interface MyTaskQuery
      * @return قائمة من المهمات *
      */
     @Query("SELECT * FROM MyTask ORDER BY importance DESC")
-    List<MyTask> getAllTasks();
+    LiveData< List<MyTask>> getAllTasks();
 
     /**
      * ارجاع المهمات حسب المستعمل وإذا انتهت أم لا ومرتبة تنازليًا حسب الأهمية *
@@ -24,7 +25,7 @@ public interface MyTaskQuery
      * @return
      */
     @Query("SELECT * FROM MyTask WHERE userId=:userid_p ORDER BY time DESC")
-    List<MyTask> getAllTaskOrederBy(long userid_p);
+    LiveData<List<MyTask>> getAllTaskOrederBy(long userid_p);
 
     /**
      * ارجاع المهمات حسب المستعمل وإذا انتهت أم لا ومرتبة تنازليًا حسب الأهمية *
@@ -34,7 +35,7 @@ public interface MyTaskQuery
      */
     @Query("SELECT * FROM MyTask WHERE userId=:userid_p AND isCompleted=:isCompleted_p " +
             "ORDER BY importance DESC")
-    List<MyTask> getAllTaskOrederBy(long userid_p, boolean isCompleted_p);
+ List<MyTask> getAllTaskOrederBy(long userid_p, boolean isCompleted_p);
 
     @Insert
     void insertTask(MyTask... t); // ثلاثة نقاط تعني مجموعة
@@ -55,6 +56,16 @@ public interface MyTaskQuery
 
     @Query("DELETE FROM MyTask WHERE keyId=:kid")
     void deleteTask(long kid);
+
+    LiveData<MyTask> getTaskById(long taskId);
+
+    LiveData<List<MyTask>> getTasksByTitle(String title);
+
+    LiveData<List<MyTask>> getTasksByDescription(String description);
+
+    LiveData<List<MyTask>> getTasksByPriority(int priority);
+
+    LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, String title);
 
 //    /**
 //     * استخراج جميع المهمات التابعة لرقم الموضوع *
