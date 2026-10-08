@@ -1,6 +1,5 @@
-package y.mubarki.applicationyareen;
+package y.mubarki.applicationyareen.ViewPkg;
 
-import static android.os.Build.VERSION_CODES_FULL.R;
 
 import android.os.Bundle;
 
@@ -9,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
 import y.mubarki.applicationyareen.R;
 import y.mubarki.applicationyareen.data.AppDatabase;
 import y.mubarki.applicationyareen.data.mysubjectstable.MySubject;

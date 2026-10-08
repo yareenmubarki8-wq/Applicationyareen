@@ -5,8 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#424D94"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ViewPkg.MainActivity">
 
     <TextView
         android:layout_width="325dp"
@@ -18,16 +19,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add New Task" />
+        android:backgroundTint="#B4607F"
+        android:text="Add New Task"
+        android:textColorLink="#3F51B5" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#B3788B"
+        android:backgroundTint="#B86880"
         android:text="Register User"
         android:textColorLink="#C75579" />
 
