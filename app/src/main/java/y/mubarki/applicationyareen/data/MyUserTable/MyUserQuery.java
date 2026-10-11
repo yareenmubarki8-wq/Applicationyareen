@@ -1,5 +1,6 @@
 package y.mubarki.applicationyareen.data.MyUserTable;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -10,10 +11,10 @@ import java.util.List;
 @Dao
 public interface MyUserQuery {
     @Query("SELECT * FROM MyUser")
-    List<MyUser> getAll();
+    LiveData<List<MyUser>> getAll();
     // استخراج مستعمل حسب رقم المميز لهid
     @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
-    List<MyUser> loadAllByIds(int[] userIds);
+    LiveData<List<MyUser>> loadAllByIds(int[] userIds);
     //هل المستعمل موجود حسب الايميل وكلمة السر
     @Query("SELECT * FROM MyUser WHERE email = :myEmail AND passw = :myPassw LIMIT 1")
     MyUser checkEmailPassw(String myEmail, String myPassw);
@@ -36,4 +37,5 @@ public interface MyUserQuery {
     void update(MyUser...values);
 
 
+    LiveData<List<MyUser>> getTasksByUserId(long userId);
 }
