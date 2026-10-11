@@ -67,12 +67,14 @@ public interface MyTaskQuery
 
     LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, String title);
 
-//    /**
-//     * استخراج جميع المهمات التابعة لرقم الموضوع *
-//     * @param key_id رقم الموضوع *
-//     * @return
-//     */
-//    @Query("SELECT * FROM MyTask WHERE subjId=:key_id " +
-//            "ORDER BY importance DESC")
-//    List<MyTask> getTasksBySubjId(long key_id);
+    void insert(MyTask[] tasks);
+
+
+    void update(MyTask[] tasks);
+
+    void updateTask(long taskId, String title, String description, int priority);
+
+    void delete(MyTask[] tasks);
+
+    void deleteTaskById(long taskId);
 }

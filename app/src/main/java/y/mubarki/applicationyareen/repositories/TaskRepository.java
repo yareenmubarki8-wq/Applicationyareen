@@ -42,6 +42,21 @@ public class TaskRepository {
     public LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, String title) {
         return taskQuery.getTasksByUserIdAndTitle(userId, title);
     }
+    public void insert(MyTask... tasks) {
+        taskQuery.insert(tasks);
+    }
+    public void update(MyTask... tasks) {
+        taskQuery.update(tasks);
+    }
+    public void updateTask(long taskId, String title, String description, int priority) {
+        taskQuery.updateTask(taskId, title, description, priority);
+    }
+    public void delete(MyTask... tasks) {
+        taskQuery.delete(tasks);
+    }
 
 
+    public void deleteTaskById(long taskId) {
+        taskQuery.deleteTaskById(taskId);
+    }
 }
