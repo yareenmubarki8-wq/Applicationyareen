@@ -26,9 +26,9 @@ public class UserRepository {
     public LiveData<List<MyUser>> getUsersByUserId(long userId) {
         return userQuery.getTasksByUserId(userId);
     }
-    public LiveData<MyUser> getUserById(long taskId) {
-        return U
-    }
+public void insert(MyUser...users){
+        userQuery.insert(myUser);
+}
 
 
 }
