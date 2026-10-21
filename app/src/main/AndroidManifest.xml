@@ -25,6 +25,10 @@
             android:name=".ViewPkg.AddTaskActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ViewPkg.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

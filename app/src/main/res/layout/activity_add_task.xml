@@ -1,71 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     tools:context=".ViewPkg.AddTaskActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:text="User Registration"
-        android:textSize="24sp" />
+        android:id="@+id/textView2"
+        android:layout_width="168dp"
+        android:layout_height="57dp"
+        android:text="Add New Task"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="28dp" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress3"
-        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_gravity="clip_vertical"
-        android:layout_margin="20dp"
-        android:gravity="left|end"
-        android:hint="Full Name"
+        android:id="@+id/editTextTextPostalAddress"
+        android:layout_width="294dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:hint="Task Title"
         android:inputType="textPostalAddress"
-        tools:visibility="visible" />
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="132dp" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress4"
-        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:id="@+id/editTextTextPostalAddress2"
+        android:layout_width="292dp"
+        android:layout_height="40dp"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textPostalAddress" />
+        android:hint="Task Description"
+        android:inputType="textPostalAddress"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="223dp" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:id="@+id/editTextTextPostalAddress7"
+        android:layout_width="293dp"
+        android:layout_height="37dp"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPostalAddress" />
-
-    <EditText
-        android:id="@+id/editTextTextPostalAddress6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="textPostalAddress" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#415B75"
-        android:text="Register" />
-
-    <Button />
-
-</LinearLayout>
-
+        android:hint="Priority(e.g 1,2,3)"
+        android:inputType="textPostalAddress"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="315dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
