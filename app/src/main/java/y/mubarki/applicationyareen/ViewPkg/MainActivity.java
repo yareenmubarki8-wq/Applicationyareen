@@ -10,9 +10,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import y.mubarki.applicationyareen.R;
-import y.mubarki.applicationyareen.data.AppDatabase;
-import y.mubarki.applicationyareen.data.mysubjectstable.MySubject;
-import y.mubarki.applicationyareen.data.mysubjectstable.MySubjectQuery;
+import y.mubarki.applicationyareen.Model.AppDatabase;
+import y.mubarki.applicationyareen.Model.mysubjectstable.MySubject;
+import y.mubarki.applicationyareen.Model.mysubjectstable.MySubjectQuery;
 
 public class MainActivity extends AppCompatActivity {
 

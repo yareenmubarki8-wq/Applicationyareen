@@ -1,4 +1,4 @@
-package y.mubarki.applicationyareen.data;
+package y.mubarki.applicationyareen.Model;
 
 import android.content.Context;
 
@@ -6,12 +6,12 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import y.mubarki.applicationyareen.data.MyUserTable.MyUser;
-import y.mubarki.applicationyareen.data.MyUserTable.MyUserQuery;
-import y.mubarki.applicationyareen.data.mysubjectstable.MySubject;
-import y.mubarki.applicationyareen.data.mysubjectstable.MySubjectQuery;
-import y.mubarki.applicationyareen.data.mytasksTable.MyTask;
-import y.mubarki.applicationyareen.data.mytasksTable.MyTaskQuery;
+import y.mubarki.applicationyareen.Model.MyUserTable.MyUser;
+import y.mubarki.applicationyareen.Model.MyUserTable.MyUserQuery;
+import y.mubarki.applicationyareen.Model.mysubjectstable.MySubject;
+import y.mubarki.applicationyareen.Model.mysubjectstable.MySubjectQuery;
+import y.mubarki.applicationyareen.Model.mytasksTable.MyTask;
+import y.mubarki.applicationyareen.Model.mytasksTable.MyTaskQuery;
 
 @Database(entities = {MyUser.class, MySubject.class, MyTask.class}, version = 1)
 /**

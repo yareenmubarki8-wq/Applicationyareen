@@ -1,4 +1,4 @@
-package y.mubarki.applicationyareen.data.MyUserTable;
+package y.mubarki.applicationyareen.Model.MyUserTable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

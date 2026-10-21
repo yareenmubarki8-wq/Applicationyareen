@@ -1,4 +1,4 @@
-package y.mubarki.applicationyareen.data.mytasksTable;
+package y.mubarki.applicationyareen.Model.mytasksTable;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

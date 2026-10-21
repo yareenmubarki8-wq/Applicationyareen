@@ -1,4 +1,4 @@
-package y.mubarki.applicationyareen.data.mysubjectstable;
+package y.mubarki.applicationyareen.Model.mysubjectstable;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

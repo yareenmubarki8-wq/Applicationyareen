@@ -6,10 +6,9 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import y.mubarki.applicationyareen.data.AppDatabase;
-import y.mubarki.applicationyareen.data.AppDatabase_Impl;
-import y.mubarki.applicationyareen.data.mytasksTable.MyTask;
-import y.mubarki.applicationyareen.data.mytasksTable.MyTaskQuery;
+import y.mubarki.applicationyareen.Model.AppDatabase;
+import y.mubarki.applicationyareen.Model.mytasksTable.MyTask;
+import y.mubarki.applicationyareen.Model.mytasksTable.MyTaskQuery;
 
 public class TaskRepository {
 

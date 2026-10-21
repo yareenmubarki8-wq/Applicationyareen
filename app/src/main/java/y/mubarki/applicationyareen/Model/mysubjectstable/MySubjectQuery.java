@@ -1,4 +1,4 @@
-package y.mubarki.applicationyareen.data.mysubjectstable;
+package y.mubarki.applicationyareen.Model.mysubjectstable;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
