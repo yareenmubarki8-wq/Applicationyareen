@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="#424D94"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".ViewPkg.MainActivity">
 
@@ -19,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btnAddNewTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#B4607F"
@@ -26,9 +28,10 @@
         android:textColorLink="#3F51B5" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnRegisterUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:backgroundTint="#B86880"
         android:text="Register User"
         android:textColorLink="#C75579" />

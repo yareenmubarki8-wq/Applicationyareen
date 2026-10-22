@@ -1,6 +1,9 @@
 package y.mubarki.applicationyareen.ViewPkg;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +15,12 @@ import y.mubarki.applicationyareen.R;
 
 public class AddTaskActivity extends AppCompatActivity {
 
+    private TextView textView;
+    private EditText editTextTextMultiLine;
+    private EditText editTextText;
+    private EditText editTextText2;
+    private Button btnSaveTask;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,5 +31,11 @@ public class AddTaskActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        textView=findViewById(R.id.AddNewTask);
+        editTextTextMultiLine=findViewById(R.id.TaskTitle);
+        editTextText=findViewById(R.id.TaskDescription);
+        editTextText2=findViewById(R.id.Priority);
+        btnSaveTask=findViewById(R.id.SaveTask);
+
     }
 }

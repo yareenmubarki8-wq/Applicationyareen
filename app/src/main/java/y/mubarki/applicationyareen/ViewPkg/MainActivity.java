@@ -2,6 +2,7 @@ package y.mubarki.applicationyareen.ViewPkg;
 
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,8 @@ import y.mubarki.applicationyareen.Model.mysubjectstable.MySubject;
 import y.mubarki.applicationyareen.Model.mysubjectstable.MySubjectQuery;
 
 public class MainActivity extends AppCompatActivity {
+    private Button btnAddNewTask;
+    private Button btnRegisterUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        btnAddNewTask=findViewById(R.id.btnAddNewTask);
+        btnRegisterUser=findViewById(R.id.btnRegisterUser);
+
+
+
     }
 
 }

@@ -1,10 +1,10 @@
-package y.mubarki.applicationyareen.TravelPkg;
+package y.mubarki.applicationyareen.TravelTable;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class TravelTable {
+public class MyTravel {
 
     @PrimaryKey(autoGenerate = true)
     /** رقم المهمة **/

@@ -9,7 +9,7 @@
     tools:context=".ViewPkg.AddTaskActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/UserRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -19,7 +19,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress3"
+        android:id="@+id/FullName"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -31,7 +31,7 @@
         tools:visibility="visible" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress4"
+        android:id="@+id/Email"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
         android:inputType="textPostalAddress" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress5"
+        android:id="@+id/Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -50,7 +50,7 @@
         android:inputType="textPostalAddress" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress6"
+        android:id="@+id/PhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -59,7 +59,7 @@
         android:inputType="textPostalAddress" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/Register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#415B75"
