@@ -36,6 +36,6 @@ public interface MyUserQuery {
 //تعديل مستعمل او قائمة مستعملين
     void update(MyUser...values);
 
-
+    @Query("SELECT * FROM MyUser WHERE keyid = :userId LIMIT 1")
     LiveData<List<MyUser>> getTasksByUserId(long userId);
 }

@@ -38,8 +38,8 @@ public class TaskRepository {
     public LiveData<List<MyTask>> getTasksByPriority(int priority) {
         return taskQuery.getTasksByPriority(priority);
     }
-    public LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, String title) {
-        return taskQuery.getTasksByUserIdAndTitle(userId, title);
+    public LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId) {
+        return taskQuery.getTasksByUserIdAndTitle(userId);
     }
     public void insert(MyTask... tasks) {
         taskQuery.insert(tasks);

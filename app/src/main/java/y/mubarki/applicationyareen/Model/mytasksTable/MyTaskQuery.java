@@ -57,24 +57,29 @@ public interface MyTaskQuery
     @Query("DELETE FROM MyTask WHERE keyId=:kid")
     void deleteTask(long kid);
 
+    @Query("SELECT * FROM MyUser WHERE keyid = :taskId LIMIT 1")
     LiveData<MyTask> getTaskById(long taskId);
 
+
+    @Query("SELECT * FROM MyUser WHERE keyid = :title LIMIT 1")
     LiveData<List<MyTask>> getTasksByTitle(String title);
-
+    @Query("SELECT * FROM MyUser WHERE keyid = :description LIMIT 1")
     LiveData<List<MyTask>> getTasksByDescription(String description);
-
+    @Query("SELECT * FROM MyUser WHERE  keyid= :priority LIMIT 1")
     LiveData<List<MyTask>> getTasksByPriority(int priority);
+    @Query("SELECT * FROM MyUser WHERE  keyid= :userId LIMIT 1")
 
-    LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, String title);
+    LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId);
 
+@Insert
     void insert(MyTask[] tasks);
-
+@Update
 
     void update(MyTask[] tasks);
-
+@Update
     void updateTask(long taskId, String title, String description, int priority);
-
+@Delete
     void delete(MyTask[] tasks);
-
+@Delete
     void deleteTaskById(long taskId);
 }
