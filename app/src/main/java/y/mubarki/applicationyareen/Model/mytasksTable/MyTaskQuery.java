@@ -82,4 +82,6 @@ public interface MyTaskQuery
     void delete(MyTask[] tasks);
 @Delete
     void deleteTaskById(long taskId);
+
+    void updateTask(long taskId, String description, int priority);
 }

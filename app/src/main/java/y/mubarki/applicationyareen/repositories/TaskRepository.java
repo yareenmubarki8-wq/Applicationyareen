@@ -58,4 +58,8 @@ public class TaskRepository {
     public void deleteTaskById(long taskId) {
         taskQuery.deleteTaskById(taskId);
     }
+
+    public LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId, String title) {
+            return allTasks;
+    }
 }
