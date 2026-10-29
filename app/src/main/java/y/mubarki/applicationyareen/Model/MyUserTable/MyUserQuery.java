@@ -38,4 +38,7 @@ public interface MyUserQuery {
 
     @Query("SELECT * FROM MyUser WHERE keyid = :userId LIMIT 1")
     LiveData<List<MyUser>> getTasksByUserId(long userId);
+
+    @Query("SELECT * FROM MyUser WHERE keyid = :userId LIMIT 1")
+    LiveData<MyUser> getUserById(long userId);
 }

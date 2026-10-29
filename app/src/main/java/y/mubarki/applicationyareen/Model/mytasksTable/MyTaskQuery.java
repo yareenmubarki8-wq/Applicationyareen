@@ -57,31 +57,33 @@ public interface MyTaskQuery
     @Query("DELETE FROM MyTask WHERE keyId=:kid")
     void deleteTask(long kid);
 
-    @Query("SELECT * FROM MyUser WHERE keyid = :taskId LIMIT 1")
+    @Query("SELECT * FROM MyTask WHERE keyId = :taskId LIMIT 1")
     LiveData<MyTask> getTaskById(long taskId);
 
-
-    @Query("SELECT * FROM MyUser WHERE keyid = :title LIMIT 1")
+    @Query("SELECT * FROM MyTask WHERE shortTitle = :title")
     LiveData<List<MyTask>> getTasksByTitle(String title);
-    @Query("SELECT * FROM MyUser WHERE keyid = :description LIMIT 1")
-    LiveData<List<MyTask>> getTasksByDescription(String description);
-    @Query("SELECT * FROM MyUser WHERE  keyid= :priority LIMIT 1")
-    LiveData<List<MyTask>> getTasksByPriority(int priority);
-    @Query("SELECT * FROM MyUser WHERE  keyid= :userId LIMIT 1")
 
+    @Query("SELECT * FROM MyTask WHERE text = :description")
+    LiveData<List<MyTask>> getTasksByDescription(String description);
+
+    @Query("SELECT * FROM MyTask WHERE importance = :priority")
+    LiveData<List<MyTask>> getTasksByPriority(int priority);
+
+    @Query("SELECT * FROM MyTask WHERE userId = :userId")
     LiveData<List<MyTask>> getTasksByUserIdAndTitle(long userId);
 
-@Insert
+    @Insert
     void insert(MyTask[] tasks);
-@Update
 
+    @Update
     void update(MyTask[] tasks);
-@Update
-    void updateTask(long taskId, String title, String description, int priority);
-@Delete
-    void delete(MyTask[] tasks);
-@Delete
-    void deleteTaskById(long taskId);
 
-    void updateTask(long taskId, String description, int priority);
+    @Query("UPDATE MyTask SET shortTitle = :title, text = :description, importance = :priority WHERE keyId = :taskId")
+    void updateTask(long taskId, String title, String description, int priority);
+
+    @Delete
+    void delete(MyTask[] tasks);
+
+    @Query("DELETE FROM MyTask WHERE keyId = :taskId")
+    void deleteTaskById(long taskId);
 }

@@ -48,7 +48,7 @@ public class TaskRepository {
         taskQuery.update(tasks);
     }
     public void updateTask(long taskId, String title, String description, int priority) {
-        taskQuery.updateTask(taskId, description, priority);
+        taskQuery.updateTask(taskId, title, description, priority);
     }
     public void delete(MyTask... tasks) {
         taskQuery.delete(tasks);

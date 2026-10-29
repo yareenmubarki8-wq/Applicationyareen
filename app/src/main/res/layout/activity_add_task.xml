@@ -1,61 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".ViewPkg.AddTaskActivity">
 
     <TextView
         android:id="@+id/AddNewTask"
-        android:layout_width="168dp"
-        android:layout_height="57dp"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_gravity="clip_vertical"
+        android:layout_margin="20dp"
         android:backgroundTint="#B67676"
         android:gravity="center"
         android:shadowColor="#A8707E"
         android:text="Add New Task"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/TaskTitle"
-        android:layout_width="294dp"
-        android:layout_height="43dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="clip_vertical"
+        android:layout_margin="20dp"
         android:ems="10"
+        android:gravity="clip_vertical"
         android:hint="Task Title"
-        android:inputType="textPostalAddress"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="132dp" />
+        android:inputType="textPostalAddress" />
 
     <EditText
         android:id="@+id/TaskDescription"
-        android:layout_width="292dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_margin="20dp"
         android:ems="10"
         android:hint="Task Description"
-        android:inputType="textPostalAddress"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="223dp" />
+        android:inputType="textPostalAddress" />
 
     <EditText
         android:id="@+id/Priority"
-        android:layout_width="296dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_margin="20dp"
         android:ems="10"
         android:hint="Priority(e.g 1,2,3)"
-        android:inputType="textPostalAddress"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="312dp" />
+        android:inputType="textPostalAddress" />
 
     <Button
         android:id="@+id/SaveTask"
-        android:layout_width="340dp"
-        android:layout_height="57dp"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_margin="20dp"
         android:backgroundTint="#974964"
         android:text="Save Task"
-        android:textColorLink="#995757"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="398dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textColorLink="#995757" />
+</LinearLayout>

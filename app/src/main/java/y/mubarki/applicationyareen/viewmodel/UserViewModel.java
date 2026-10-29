@@ -29,7 +29,7 @@ public class UserViewModel extends AndroidViewModel {
         return repository.getUsersByUserId(userId);
     }
     public LiveData<MyUser> getUserById(long userId) {
-        return repository.getUsersById(userId);
+        return repository.getUserById(userId);
     }
 
 }

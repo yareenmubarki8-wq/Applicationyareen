@@ -62,7 +62,7 @@
         android:id="@+id/Register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#415B75"
+        android:backgroundTint="#AD7081"
         android:text="Register" />
 
     <Button />
