@@ -22,7 +22,7 @@ public class UserViewModel extends AndroidViewModel {
         repository = new UserRepository(application);
         allUsers = repository.getallUsers();
     }
-    public LiveData<List<MyUser>> getAllTasks() {
+    public LiveData<List<MyUser>> getAllUsers() {
         return allUsers;
     }
     public LiveData<List<MyUser>>getUsersByUserId(long userId){

@@ -30,7 +30,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ViewPkg.SignIn"
+            android:name=".ViewPkg.SignInActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
