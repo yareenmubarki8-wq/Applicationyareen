@@ -44,4 +44,7 @@ public interface MyUserQuery {
 
     @Query("SELECT * FROM MyUser WHERE keyid = :userId LIMIT 1")
     LiveData<MyUser> getUserById(long userId);
+
+    @Query("SELECT * FROM MyUser WHERE email = :email AND passw = :password LIMIT 1")
+    MyUser login(String email, String password);
 }

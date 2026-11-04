@@ -52,4 +52,8 @@ public class UserRepository {
     public MyUser getUserByEmail(String email) {
         return  userQuery.getUserByEmail(email);
     }
+    public MyUser login(String email, String password){
+        return userQuery.login(email,password);
+    }
+
 }

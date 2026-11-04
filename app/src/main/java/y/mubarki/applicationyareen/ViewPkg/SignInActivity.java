@@ -13,11 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 import y.mubarki.applicationyareen.Model.AppDatabase;
 import y.mubarki.applicationyareen.Model.MyUserTable.MyUser;
 import y.mubarki.applicationyareen.Model.MyUserTable.MyUserQuery;
 import y.mubarki.applicationyareen.R;
+import y.mubarki.applicationyareen.viewmodel.UserViewModel;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -26,6 +28,7 @@ public class SignInActivity extends AppCompatActivity {
     private CheckBox cbRememberMe;
     private TextView tvForgotPassword;
     private MyUserQuery userQuery;
+    private UserViewModel userViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,9 @@ public class SignInActivity extends AppCompatActivity {
         btnAppleSignIn = findViewById(R.id.btnAppleSignIn);
 
         btnSignIn.setOnClickListener(v -> {
+            userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+
+
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
 
@@ -83,6 +89,26 @@ public class SignInActivity extends AppCompatActivity {
         btnAppleSignIn.setOnClickListener(v -> {
             Toast.makeText(this, "جاري تسجيل الدخول بواسطة Apple...", Toast.LENGTH_SHORT).show();
         });
+    }
+    private void signInUser() {
+        // 1. جلب المدخلات من الحقول
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+        if (email.isEmpty()){
+            etPassword.setError("Password is required");
+            etPassword.requestFocus();
+            return;
+        }
+        MyUser user = userViewModel.login(email, password);
+        if (user != null) {
+            Toast.makeText(this, "Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
 

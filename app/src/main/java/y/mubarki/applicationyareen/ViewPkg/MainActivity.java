@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnRegisterUser.setOnClickListener(new View.OnClickListener(){
          public void onClick(View view) {
-           Intent i=new Intent(MainActivity.this, RegisterActivity.class );
+           Intent i=new Intent(MainActivity.this, SignUpActivity.class );
             startActivity(i);
   }
    });
