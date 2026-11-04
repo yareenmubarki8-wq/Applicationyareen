@@ -21,6 +21,9 @@ public interface MyUserQuery {
     //فحص هل الايميل موجود من قبل
     @Query("SELECT * FROM MyUser WHERE email = :myEmail LIMIT 1")
     MyUser checkEmail(String myEmail);
+
+    @Query("SELECT * FROM MyUser WHERE email = :myEmail LIMIT 1")
+    MyUser getUserByEmail(String myEmail);
     @Insert// اضافة مستعمل او مجموعة مستعملين
     void insertAll(MyUser... users);
     @Delete

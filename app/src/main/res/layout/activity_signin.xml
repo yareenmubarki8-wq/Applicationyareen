@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#F8F9FA"
+    android:background="#FFF7ED"
     tools:context=".ViewPkg.SignInActivity">
 
     <LinearLayout
@@ -16,23 +16,24 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- App / Login Icon -->
+        <!-- Profile Photo Illustration Icon -->
         <ImageView
             android:id="@+id/imgLogo"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="User Login Icon"
-            android:src="@drawable/ic_login_avatar" />
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="Profile Photo Illustration"
+            android:src="@drawable/ic_profile_photo"
+            android:scaleType="centerInside" />
 
         <!-- Title -->
         <TextView
             android:id="@+id/SignInTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome Back"
-            android:textColor="#212121"
-            android:textSize="26sp"
+            android:text="Explore the World"
+            android:textColor="#431407"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <!-- Subtitle -->
@@ -41,9 +42,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="24dp"
-            android:text="Sign in to your account"
-            android:textColor="#757575"
+            android:layout_marginBottom="28dp"
+            android:text="Sign in to plan your next travel adventure"
+            android:textColor="#78716C"
             android:textSize="15sp" />
 
         <!-- Email Field -->
@@ -51,12 +52,14 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="16dp"
             android:hint="Email Address"
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#EA580C"
+            app:hintTextColor="#EA580C">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
@@ -77,6 +80,8 @@
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
             app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#EA580C"
+            app:hintTextColor="#EA580C"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -91,7 +96,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="24dp">
 
             <CheckBox
                 android:id="@+id/cbRememberMe"
@@ -100,7 +105,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:text="Remember Me"
-                android:textColor="#424242"
+                android:textColor="#44403C"
                 android:textSize="14sp" />
 
             <TextView
@@ -111,7 +116,7 @@
                 android:layout_centerVertical="true"
                 android:padding="4dp"
                 android:text="Forgot Password?"
-                android:textColor="#C76E8E"
+                android:textColor="#000000"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -122,8 +127,8 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_marginBottom="24dp"
-            android:backgroundTint="#C76E8E"
-            android:text="Sign In"
+            android:backgroundTint="#D06E91"
+            android:text="Start Journey (Sign In)"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -141,7 +146,7 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="1"
-                android:background="#E0E0E0" />
+                android:background="#D6D3D1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -149,7 +154,7 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:text="OR"
-                android:textColor="#9E9E9E"
+                android:textColor="#78716C"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
@@ -157,7 +162,7 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="1"
-                android:background="#E0E0E0" />
+                android:background="#D6D3D1" />
         </LinearLayout>
 
         <!-- Social Login Buttons Row -->
@@ -176,11 +181,11 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:text="Google"
-                android:textColor="#333333"
+                android:textColor="#292524"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:cornerRadius="12dp"
-                app:strokeColor="#CCCCCC"
+                app:strokeColor="#D6D3D1"
                 app:strokeWidth="1dp" />
 
             <!-- Apple Sign In Button -->
@@ -191,7 +196,7 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:backgroundTint="#E2ACBE"
+                android:backgroundTint="#E494B1"
                 android:text="Apple"
                 android:textColor="@android:color/white"
                 android:textSize="14sp"

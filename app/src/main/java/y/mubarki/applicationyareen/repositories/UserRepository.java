@@ -29,6 +29,8 @@ public class UserRepository {
         return userQuery.getTasksByUserId(userId);
     }
 
+
+
     public LiveData<MyUser> getUserById(long userId) {
         return userQuery.getUserById(userId);
     }
@@ -45,5 +47,9 @@ public class UserRepository {
     }
     public void delete(int id) {
         userQuery.delete(id);
+    }
+
+    public MyUser getUserByEmail(String email) {
+        return  userQuery.getUserByEmail(email);
     }
 }

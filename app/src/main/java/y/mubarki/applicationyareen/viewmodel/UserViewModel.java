@@ -20,8 +20,15 @@ public class UserViewModel extends AndroidViewModel {
 
         super(application);
         repository = new UserRepository(application);
-        allUsers = repository.getallUsers();
     }
+
+    public void insert(MyUser user) {
+        repository.insert(user);
+    }
+    public MyUser getUserByEmail(String email) {
+        return repository.getUserByEmail(email);
+    }
+
     public LiveData<List<MyUser>> getAllUsers() {
         return allUsers;
     }
