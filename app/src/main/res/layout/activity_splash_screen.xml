@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark_blue_gradient"
+    tools:context=".ViewPkg.SplashScreenActivity">
+
+    <!-- Center Content Layout: Logo + Title + Tagline -->
+    <LinearLayout
+        android:id="@+id/layoutCenterContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_setVerticalBias="0.45">
+
+        <!-- Travel Airplane Header Illustration Logo -->
+        <ImageView
+            android:id="@+id/imgSplashLogo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="Dark Blue Travel Airplane Logo"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_blue_airplane_header" />
+
+        <!-- App / Travel Title in Ice Cyan Blue -->
+        <TextView
+            android:id="@+id/tvSplashTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explore The World"
+            android:textColor="#E0F2FE"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <!-- Subtitle / Tagline in Bright Sky Blue -->
+        <TextView
+            android:id="@+id/tvSplashTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.03"
+            android:text="Your Ultimate Travel Companion"
+            android:textColor="#38BDF8"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Bottom Section: Loading Indicator & Footer -->
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginBottom="16dp"
+            android:indeterminateTint="#38BDF8" />
+
+        <TextView
+            android:id="@+id/tvFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.08"
+            android:text="Plan • Travel • Discover"
+            android:textColor="#93C5FD"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
