@@ -89,6 +89,7 @@ public class SignInActivity extends AppCompatActivity {
         btnAppleSignIn.setOnClickListener(v -> {
             Toast.makeText(this, "جاري تسجيل الدخول بواسطة Apple...", Toast.LENGTH_SHORT).show();
         });
+        signInUser();
     }
     private void signInUser() {
         // 1. جلب المدخلات من الحقول

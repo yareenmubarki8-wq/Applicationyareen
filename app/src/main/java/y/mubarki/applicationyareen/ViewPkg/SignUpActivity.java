@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 import y.mubarki.applicationyareen.Model.MyUserTable.MyUser;
 import y.mubarki.applicationyareen.R;
@@ -24,6 +25,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText etFullName, etEmail, etPassword, etPhoneNumber;
     private Button btnRegister;
     private UserRepository userRepository;
+    private UserViewModel userViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +39,14 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
         userRepository = new UserRepository(getApplication());
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
-        userRegisterTitle = findViewById(R.id.UserRegister);
-        etFullName = findViewById(R.id.FullName);
-        etEmail = findViewById(R.id.Email);
-        etPassword = findViewById(R.id.Password);
-        etPhoneNumber = findViewById(R.id.PhoneNumber);
-        btnRegister = findViewById(R.id.Register);
+        userRegisterTitle = findViewById(R.id.tvSignUp);
+        etFullName = findViewById(R.id.etFullName);
+        etEmail = findViewById(R.id.etEmail);
+        etPassword = findViewById(R.id.etPassword);
+        etPhoneNumber = findViewById(R.id.etPhoneNumber);
+        btnRegister = findViewById(R.id.btnRegister);
 
         btnRegister.setOnClickListener(v -> {
             String fullName = etFullName.getText().toString().trim();
@@ -66,6 +69,8 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(this, "تم إنشاء الحساب بنجاح!", Toast.LENGTH_SHORT).show();
             finish();
         });
+
+        signUpUser();
     }
     private void signUpUser() {
         // 1. جلب المدخلات من الحقول
@@ -76,7 +81,12 @@ public class SignUpActivity extends AppCompatActivity {
             etPassword.requestFocus();
             return;
         }
-        MyUser user = UserViewModel.login(email, password);
+        if (password.isEmpty()){
+            etPassword.setError("Password is required");
+            etPassword.requestFocus();
+            return;
+        }
+        MyUser user = userViewModel.login(email, password);
         if (user != null) {
             Toast.makeText(this, "Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
@@ -87,4 +97,5 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
     }
+
 }
