@@ -1,62 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="20dp"
-    android:gravity="center"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/bg_dark_blue_gradient"
     tools:context=".ViewPkg.AddTaskActivity">
 
-    <TextView
-        android:id="@+id/AddNewTask"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_gravity="clip_vertical"
-        android:layout_margin="20dp"
-        android:backgroundTint="#B67676"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:shadowColor="#A8707E"
-        android:text="Add New Task"
-        android:textSize="24sp" />
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <EditText
-        android:id="@+id/TaskTitle"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_gravity="clip_vertical"
-        android:layout_margin="20dp"
-        android:ems="10"
-        android:gravity="clip_vertical"
-        android:hint="Task Title"
-        android:inputType="textPostalAddress" />
+        <!-- Unique Task Clipboard Illustration -->
+        <ImageView
+            android:id="@+id/imgAddTaskLogo"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Add Task Clipboard Illustration"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_add_task_illustration" />
 
-    <EditText
-        android:id="@+id/TaskDescription"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_margin="20dp"
-        android:ems="10"
-        android:hint="Task Description"
-        android:inputType="textPostalAddress" />
+        <!-- Floating Dark Blue Form Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dark_blue_card"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:padding="24dp">
 
-    <EditText
-        android:id="@+id/Priority"
-        android:layout_width="match_parent"
-        android:layout_height="76dp"
-        android:layout_margin="20dp"
-        android:ems="10"
-        android:hint="Priority(e.g 1,2,3)"
-        android:inputType="textPostalAddress" />
+            <!-- Title -->
+            <TextView
+                android:id="@+id/AddNewTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:text="Add New Task"
+                android:textColor="#E0F2FE"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/SaveTask"
-        android:layout_width="match_parent"
-        android:layout_height="66dp"
-        android:layout_margin="20dp"
-        android:backgroundTint="#974964"
-        android:text="Save Task"
-        android:textColorLink="#995757" />
-</LinearLayout>
+            <!-- Task Title Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:hint="Task Title"
+                android:textColorHint="#93C5FD"
+                app:boxCornerRadiusBottomEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp"
+                app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusTopStart="14dp"
+                app:boxStrokeColor="#38BDF8"
+                app:hintTextColor="#38BDF8">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#93C5FD" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Task Description Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:hint="Task Description"
+                android:textColorHint="#93C5FD"
+                app:boxCornerRadiusBottomEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp"
+                app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusTopStart="14dp"
+                app:boxStrokeColor="#38BDF8"
+                app:hintTextColor="#38BDF8">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TaskDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:minLines="2"
+                    android:padding="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#93C5FD" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Priority Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:hint="Priority (e.g. 1, 2, 3)"
+                android:textColorHint="#93C5FD"
+                app:boxCornerRadiusBottomEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp"
+                app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusTopStart="14dp"
+                app:boxStrokeColor="#38BDF8"
+                app:hintTextColor="#38BDF8">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Priority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:padding="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#93C5FD" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Save Task Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/SaveTask"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:backgroundTint="#0284C7"
+                android:text="Save Task"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_airplane_white"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp"
+                app:iconTint="@android:color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

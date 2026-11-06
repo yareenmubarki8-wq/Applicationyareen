@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@drawable/bg_pink_gradient"
+    android:background="@drawable/bg_dark_blue_gradient"
     tools:context=".ViewPkg.SignInActivity">
 
     <LinearLayout
@@ -23,15 +23,15 @@
             android:layout_height="140dp"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="16dp"
-            android:contentDescription="Pink Airplane Illustration"
-            android:src="@drawable/ic_pink_airplane_header"
+            android:contentDescription="Dark Blue Airplane Illustration"
+            android:src="@drawable/ic_blue_airplane_header"
             android:scaleType="centerInside" />
 
-        <!-- Floating White & Pink Form Card -->
+        <!-- Floating Dark Blue Form Card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_pink_card"
+            android:background="@drawable/bg_dark_blue_card"
             android:elevation="6dp"
             android:orientation="vertical"
             android:padding="24dp">
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Explore the World"
-                android:textColor="#831843"
+                android:textColor="#E0F2FE"
                 android:textSize="26sp"
                 android:textStyle="bold" />
 
@@ -56,7 +56,7 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="24dp"
                 android:text="Sign in to plan your next travel adventure"
-                android:textColor="#BE185D"
+                android:textColor="#38BDF8"
                 android:textSize="14sp" />
 
             <!-- Email Field -->
@@ -66,12 +66,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
                 android:hint="Email Address"
+                android:textColorHint="#93C5FD"
                 app:boxCornerRadiusBottomEnd="14dp"
                 app:boxCornerRadiusBottomStart="14dp"
                 app:boxCornerRadiusTopEnd="14dp"
                 app:boxCornerRadiusTopStart="14dp"
-                app:boxStrokeColor="#DB2777"
-                app:hintTextColor="#DB2777">
+                app:boxStrokeColor="#38BDF8"
+                app:hintTextColor="#38BDF8">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmail"
@@ -79,7 +80,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:padding="16dp"
-                    android:textColor="#831843" />
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#93C5FD" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Password Field -->
@@ -89,14 +91,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:hint="Password"
+                android:textColorHint="#93C5FD"
                 app:boxCornerRadiusBottomEnd="14dp"
                 app:boxCornerRadiusBottomStart="14dp"
                 app:boxCornerRadiusTopEnd="14dp"
                 app:boxCornerRadiusTopStart="14dp"
-                app:boxStrokeColor="#DB2777"
-                app:hintTextColor="#DB2777"
+                app:boxStrokeColor="#38BDF8"
+                app:hintTextColor="#38BDF8"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#DB2777">
+                app:passwordToggleTint="#38BDF8">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
@@ -104,7 +107,8 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:padding="16dp"
-                    android:textColor="#831843" />
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#93C5FD" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Remember Me & Forgot Password Options Row -->
@@ -119,9 +123,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:buttonTint="#DB2777"
+                    android:buttonTint="#38BDF8"
                     android:text="Remember Me"
-                    android:textColor="#831843"
+                    android:textColor="#E0F2FE"
                     android:textSize="14sp" />
 
                 <TextView
@@ -132,7 +136,7 @@
                     android:layout_centerVertical="true"
                     android:padding="4dp"
                     android:text="Forgot Password?"
-                    android:textColor="#DB2777"
+                    android:textColor="#38BDF8"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </RelativeLayout>
@@ -143,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:layout_marginBottom="24dp"
-                android:backgroundTint="#DB2777"
+                android:backgroundTint="#0284C7"
                 android:text="Start Journey (Sign In)"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
@@ -166,7 +170,7 @@
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1"
-                    android:background="#FBCFE8" />
+                    android:background="#334155" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -174,7 +178,7 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
                     android:text="OR"
-                    android:textColor="#BE185D"
+                    android:textColor="#93C5FD"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
@@ -182,7 +186,7 @@
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1"
-                    android:background="#FBCFE8" />
+                    android:background="#334155" />
             </LinearLayout>
 
             <!-- Social Login Buttons Row -->
@@ -201,11 +205,11 @@
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:text="Google"
-                    android:textColor="#831843"
+                    android:textColor="#E0F2FE"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:cornerRadius="12dp"
-                    app:strokeColor="#DB2777"
+                    app:strokeColor="#38BDF8"
                     app:strokeWidth="1.5dp" />
 
                 <!-- Apple Sign In Button -->
@@ -216,13 +220,14 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="8dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#E494B1"
+                    android:backgroundTint="#1E293B"
                     android:text="Apple"
-                    android:textColor="@android:color/white"
+                    android:textColor="#E0F2FE"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:cornerRadius="12dp"
-                    app:strokeWidth="0dp" />
+                    app:strokeColor="#38BDF8"
+                    app:strokeWidth="1.5dp" />
             </LinearLayout>
 
         </LinearLayout>

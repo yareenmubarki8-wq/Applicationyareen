@@ -5,35 +5,132 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#424D94"
-    android:gravity="center"
+    android:background="@drawable/bg_dark_blue_gradient"
     android:orientation="vertical"
     tools:context=".ViewPkg.MainActivity">
 
-    <TextView
-        android:layout_width="325dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnAddNewTask"
+    <!-- Top Toolbar displaying Title and Settings Icon -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#B4607F"
-        android:text="Add New Task"
-        android:textColorLink="#3F51B5" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        app:menu="@menu/main_menu"
+        app:title="Travel Companion"
+        app:titleCentered="false"
+        app:titleTextColor="#E0F2FE" />
 
-    <Button
-        android:id="@+id/btnRegisterUser"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#B86880"
-        android:text="Register User"
-        android:textColorLink="#C75579" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Unique Dashboard World Globe Illustration -->
+            <ImageView
+                android:id="@+id/imgMainLogo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Travel World Globe Logo"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_main_dashboard_globe" />
+
+            <!-- Main Title -->
+            <TextView
+                android:id="@+id/tvMainTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explore The World"
+                android:textColor="#E0F2FE"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tvMainSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="28dp"
+                android:text="Your Ultimate Travel Companion"
+                android:textColor="#38BDF8"
+                android:textSize="15sp" />
+
+            <!-- Floating Dark Blue Action Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dark_blue_card"
+                android:elevation="6dp"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:text="Start Your Journey"
+                    android:textColor="#E0F2FE"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Add New Task Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddNewTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginBottom="14dp"
+                    android:backgroundTint="#0284C7"
+                    android:text="Add New Trip"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_airplane_white"
+                    app:iconGravity="textStart"
+                    app:iconPadding="10dp"
+                    app:iconTint="@android:color/white" />
+
+                <!-- Sign In Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSignIn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginBottom="14dp"
+                    android:text="Sign In"
+                    android:textColor="#E0F2FE"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="16dp"
+                    app:strokeColor="#38BDF8"
+                    app:strokeWidth="1.5dp" />
+
+                <!-- Register User Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegisterUser"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="Sign Up"
+                    android:textColor="#E0F2FE"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="16dp"
+                    app:strokeColor="#38BDF8"
+                    app:strokeWidth="1.5dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

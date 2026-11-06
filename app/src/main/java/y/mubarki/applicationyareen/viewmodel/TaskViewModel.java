@@ -13,8 +13,8 @@ import y.mubarki.applicationyareen.repositories.TaskRepository;
 
 public class TaskViewModel extends AndroidViewModel
 {
-    private final TaskRepository repository;
-    private final  LiveData<List<MyTask>> allTasks ;
+    private  TaskRepository repository;
+    private  LiveData<List<MyTask>> allTasks ;
 
     public TaskViewModel(@NonNull Application application){
 
@@ -61,3 +61,4 @@ public LiveData<MyTask> getTaskById(long taskId) {
     }
 
 }
+
