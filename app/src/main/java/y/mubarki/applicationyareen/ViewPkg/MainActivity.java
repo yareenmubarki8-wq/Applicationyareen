@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
@@ -86,10 +87,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.itmSettings) {
+        int id = item.getItemId();
+        if (id == R.id.itmSettings) {
             Toast.makeText(this, "الإعدادات (Settings)", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.itmsHistory) {
+            Toast.makeText(this, "سجل الرحلات (History)", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.itmsSignOut) {
+            Toast.makeText(this, "تسجيل الخروج (Sign Out)", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+            startActivity(intent);
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

@@ -7,8 +7,21 @@
         android:icon="@drawable/ic_settings"
         android:title="Settings"
         app:showAsAction="always" />
+
     <item
-        android:id="@+id/itmsHistory"
-        android:title="Sign Out"
-        app:showAsAction="always|withText" />
+        android:id="@+id/itmAccountMenu"
+        android:icon="@drawable/ic_account_menu"
+        android:title="Account"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/itmsHistory"
+                android:icon="@drawable/ic_history"
+                android:title="History" />
+            <item
+                android:id="@+id/itmsSignOut"
+                android:icon="@drawable/ic_signout"
+                android:title="Sign Out" />
+        </menu>
+    </item>
 </menu>

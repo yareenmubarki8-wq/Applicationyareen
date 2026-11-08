@@ -103,7 +103,7 @@ public class SignInActivity extends AppCompatActivity {
         MyUser user = userViewModel.login(email, password);
         if (user != null) {
             Toast.makeText(this, "Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+            Intent intent = new Intent(SignInActivity.this, AddTaskActivity.class);
             startActivity(intent);
             finish();
         } else {
