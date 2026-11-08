@@ -19,8 +19,7 @@
         app:layout_constraintBottom_toTopOf="@+id/layoutBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_setVerticalBias="0.45">
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Travel Airplane Header Illustration Logo -->
         <ImageView
