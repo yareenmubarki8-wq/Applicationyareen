@@ -54,12 +54,28 @@ public class SignUpActivity extends AppCompatActivity {
             String password = etPassword.getText().toString().trim();
             String phone = etPhoneNumber.getText().toString().trim();
 
-            if (fullName.isEmpty() || email.isEmpty() || password.isEmpty() || phone.isEmpty()) {
-                Toast.makeText(this, "رجاءً إكمال جميع الحقول المطلوبة", Toast.LENGTH_SHORT).show();
+            if (fullName.isEmpty()) {
+                etFullName.setError("Full Name is required");
+                etFullName.requestFocus();
+                return;
+            }
+            if (email.isEmpty()) {
+                etEmail.setError("Email is required");
+                etEmail.requestFocus();
+                return;
+            }
+            if (password.isEmpty()) {
+                etPassword.setError("Password is required");
+                etPassword.requestFocus();
+                return;
+            }
+            if (phone.isEmpty()) {
+                etPhoneNumber.setError("Phone Number is required");
+                etPhoneNumber.requestFocus();
                 return;
             }
 
-
+            // Save new user into Room Database
             MyUser user = new MyUser();
             user.setFullName(fullName);
             user.email = email;
@@ -67,40 +83,16 @@ public class SignUpActivity extends AppCompatActivity {
             user.phone = phone;
 
             userRepository.insert(user);
-            Toast.makeText(this, "تم إنشاء الحساب بنجاح!", Toast.LENGTH_SHORT).show();
-            finish();
-        });
 
-        signUpUser();
-    }
+            // Show confirmation toast message to user
+            Toast.makeText(this, "Account created successfully! Welcome, " + fullName, Toast.LENGTH_LONG).show();
 
-
-
-
-    private void signUpUser() {
-        // 1. جلب المدخلات من الحقول
-        String email = etEmail.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
-        if (email.isEmpty()){
-            etPassword.setError("Password is required");
-            etPassword.requestFocus();
-            return;
-        }
-        if (password.isEmpty()){
-            etPassword.setError("Password is required");
-            etPassword.requestFocus();
-            return;
-        }
-        MyUser user = userViewModel.login(email, password);
-        if (user != null) {
-            Toast.makeText(this, "Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
+            // Navigate to MainActivity2
             Intent intent = new Intent(SignUpActivity.this, MainActivity2.class);
+            intent.putExtra("userName", fullName);
+            intent.putExtra("userEmail", email);
             startActivity(intent);
             finish();
-        } else {
-            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
-        }
-
+        });
     }
-
 }
