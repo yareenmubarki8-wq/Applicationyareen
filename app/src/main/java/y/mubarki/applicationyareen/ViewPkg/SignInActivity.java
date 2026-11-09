@@ -67,19 +67,21 @@ public class SignInActivity extends AppCompatActivity {
             MyUser user = userQuery.checkEmailPassw(email, password);
             if (user != null) {
                 if (cbRememberMe.isChecked()) {
-                    Toast.makeText(this, "تم حفظ خيار تذكرني", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Remember me", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(this, "تم تسجيل الدخول بنجاح!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                Toast.makeText(this, "Signed In ", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SignInActivity.this, MainActivity2.class);
                 startActivity(intent);
                 finish();
             } else {
-                Toast.makeText(this, "البريد الإلكتروني أو كلمة المرور غير صحيحة", Toast.LENGTH_SHORT).show();
+                etPassword.setError("invalid account");
+                etPassword.requestFocus();
+                Toast.makeText(this, "invalid account", Toast.LENGTH_SHORT).show();
             }
         });
 
         tvForgotPassword.setOnClickListener(v -> {
-            Toast.makeText(this, "الانتقال لإعادة ضبط كلمة المرور...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Proceeding to reset password..", Toast.LENGTH_SHORT).show();
         });
 
         btnGoogleSignIn.setOnClickListener(v -> {
@@ -89,7 +91,6 @@ public class SignInActivity extends AppCompatActivity {
         btnAppleSignIn.setOnClickListener(v -> {
             Toast.makeText(this, "جاري تسجيل الدخول بواسطة Apple...", Toast.LENGTH_SHORT).show();
         });
-        signInUser();
     }
     private void signInUser() {
         // 1. جلب المدخلات من الحقول
@@ -103,11 +104,13 @@ public class SignInActivity extends AppCompatActivity {
         MyUser user = userViewModel.login(email, password);
         if (user != null) {
             Toast.makeText(this, "Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SignInActivity.this, AddTaskActivity.class);
+            Intent intent = new Intent(SignInActivity.this, MainActivity2.class);
             startActivity(intent);
             finish();
         } else {
-            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+            etPassword.setError("invalid account");
+            etPassword.requestFocus();
+            Toast.makeText(this, "invalid account", Toast.LENGTH_SHORT).show();
         }
 
     }

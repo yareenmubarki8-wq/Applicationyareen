@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        btnAddNewTask = findViewById(R.id.btnAddNewTask);
+
         btnRegisterUser = findViewById(R.id.btnRegisterUser);
         btnSignIn = findViewById(R.id.btnSignIn);
 

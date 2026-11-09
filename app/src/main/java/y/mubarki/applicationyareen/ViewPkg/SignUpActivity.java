@@ -59,6 +59,7 @@ public class SignUpActivity extends AppCompatActivity {
                 return;
             }
 
+
             MyUser user = new MyUser();
             user.setFullName(fullName);
             user.email = email;
@@ -72,6 +73,10 @@ public class SignUpActivity extends AppCompatActivity {
 
         signUpUser();
     }
+
+
+
+
     private void signUpUser() {
         // 1. جلب المدخلات من الحقول
         String email = etEmail.getText().toString().trim();
@@ -89,7 +94,7 @@ public class SignUpActivity extends AppCompatActivity {
         MyUser user = userViewModel.login(email, password);
         if (user != null) {
             Toast.makeText(this, "Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SignUpActivity.this, AddTaskActivity.class);
+            Intent intent = new Intent(SignUpActivity.this, MainActivity2.class);
             startActivity(intent);
             finish();
         } else {
