@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_dark_blue_gradient"
     android:orientation="vertical"
-    tools:context=".ViewPkg.MainActivity2">
+    tools:context=".ViewPkg.YourTaskActivity">
 
     <!-- Top AppBar Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
@@ -101,18 +101,6 @@
                     app:iconTint="@android:color/white" />
 
                 <!-- Sign Out Button -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSignOut2"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="54dp"
-                    android:text="Sign Out"
-                    android:textColor="#E0F2FE"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:cornerRadius="16dp"
-                    app:strokeColor="#38BDF8"
-                    app:strokeWidth="1.5dp" />
 
             </LinearLayout>
 

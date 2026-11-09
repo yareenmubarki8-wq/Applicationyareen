@@ -88,7 +88,7 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(this, "Account created successfully! Welcome, " + fullName, Toast.LENGTH_LONG).show();
 
             // Navigate to MainActivity2
-            Intent intent = new Intent(SignUpActivity.this, MainActivity2.class);
+            Intent intent = new Intent(SignUpActivity.this, YourTaskActivity.class);
             intent.putExtra("userName", fullName);
             intent.putExtra("userEmail", email);
             startActivity(intent);

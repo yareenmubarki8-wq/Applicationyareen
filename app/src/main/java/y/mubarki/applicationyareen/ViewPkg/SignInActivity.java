@@ -70,7 +70,7 @@ public class SignInActivity extends AppCompatActivity {
                     Toast.makeText(this, "Remember me", Toast.LENGTH_SHORT).show();
                 }
                 Toast.makeText(this, "Signed In ", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignInActivity.this, MainActivity2.class);
+                Intent intent = new Intent(SignInActivity.this, YourTaskActivity.class);
                 startActivity(intent);
                 finish();
             } else {
@@ -104,7 +104,7 @@ public class SignInActivity extends AppCompatActivity {
         MyUser user = userViewModel.login(email, password);
         if (user != null) {
             Toast.makeText(this, "Welcome, " + user.getFullName(), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(SignInActivity.this, MainActivity2.class);
+            Intent intent = new Intent(SignInActivity.this, YourTaskActivity.class);
             startActivity(intent);
             finish();
         } else {
