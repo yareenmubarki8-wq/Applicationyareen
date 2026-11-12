@@ -1,14 +1,17 @@
 package y.mubarki.applicationyareen.ViewPkg;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -54,6 +57,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        MaterialToolbar topAppBar = findViewById(R.id.topAppBar);
+        if (topAppBar != null) {
+            topAppBar.setOnMenuItemClickListener(item -> {
+                int id = item.getItemId();
+                if (id == R.id.itmSettings) {
+                    Toast.makeText(this, "الإعدادات (Settings)", Toast.LENGTH_SHORT).show();
+                    return true;
+                } else if (id == R.id.itmsSignOut) {
+                    showYesNoDialog();
+                    return true;
+                }
+                return false;
+            });
+            topAppBar.setOnMenuItemClickListener(item -> handleMenuItemClick(item.getItemId()));
+        }
+
         btnRegisterUser = findViewById(R.id.btnRegisterUser);
         btnSignIn = findViewById(R.id.btnSignIn);
 
@@ -79,6 +98,45 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private boolean handleMenuItemClick(int id) {
+        if (id == R.id.itmSettings) {
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.itmsHistory) {
+            Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.itmsSignOut) {
+            showYesNoDialog();
+            return true;
+        }
+        return false;
+    }
+
+    public void showYesNoDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Log out");
+        builder.setMessage("Are you sure you want to sign out?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(MainActivity.this, "Signing out", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -87,21 +145,28 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.itmSettings) {
-            Toast.makeText(this, "الإعدادات (Settings)", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (id == R.id.itmsHistory) {
-            Toast.makeText(this, "سجل الرحلات (History)", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (id == R.id.itmsSignOut) {
-            Toast.makeText(this, "تسجيل الخروج (Sign Out)", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, SignInActivity.class);
-            startActivity(intent);
-            finish();
-            return true;
+        if (item.getItemId() == R.id.itmSettings) {
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
         }
-        return super.onOptionsItemSelected(item);
+
+        if (item.getItemId() == R.id.itmsSignOut) {
+            Toast.makeText(this, "Sign out", Toast.LENGTH_SHORT).show();
+        }
+
+        if (item.getItemId() == R.id.itmsHistory) {
+            Toast.makeText(this, "History", Toast.LENGTH_SHORT).show();
+        }
+
+        return true;
     }
 
+    public void onClick(View view) {
+        Intent i = new Intent(MainActivity.this, AddTaskActivity.class);
+        startActivity(i);
+    }
+
+    public void onClickR(View view) {
+        Intent i = new Intent(MainActivity.this, YourTaskActivity.class);
+        startActivity(i);
+    }
 }

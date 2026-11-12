@@ -45,20 +45,7 @@ public class YourTaskActivity extends AppCompatActivity {
 
         // Setup Toolbar Menu Item Listener
         MaterialToolbar topAppBar = findViewById(R.id.topAppBar);
-        if (topAppBar != null) {
-            topAppBar.setOnMenuItemClickListener(item -> {
-                if (item.getItemId() == R.id.itmSettings) {
-                    Toast.makeText(this, "الإعدادات (Settings)", Toast.LENGTH_SHORT).show();
-                    return true;
-                } else if (item.getItemId() == R.id.itmsSignOut) {
-                    Intent intent = new Intent(YourTaskActivity.this, SignInActivity.class);
-                    startActivity(intent);
-                    finish();
-                    return true;
-                }
-                return false;
-            });
-        }
+        if (topAppBar != null)
         if (btnAddNewTask2 != null) {
             btnAddNewTask2.setOnClickListener(v -> {
                 Intent intent = new Intent(YourTaskActivity.this, AddTaskActivity.class);
@@ -77,6 +64,22 @@ public class YourTaskActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.itmSettings) {
+            Toast.makeText(this, "الإعدادات (Settings)", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.itmsSignOut) {
+            Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(YourTaskActivity.this, SignInActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

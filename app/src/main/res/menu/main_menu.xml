@@ -3,12 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/itmSettings"
-        android:icon="@drawable/ic_settings"
-        android:title="Settings"
-        app:showAsAction="always" />
-
-    <item
         android:id="@+id/itmAccountMenu"
         android:icon="@drawable/ic_account_menu"
         android:title="Account"
@@ -24,4 +18,15 @@
                 android:title="Sign Out" />
         </menu>
     </item>
+    <item
+        android:id="@+id/itmsSignout"
+        android:title="SignOut" />
+    <item
+        android:id="@+id/itmsHistory"
+        android:title="History" />
+    <item
+        android:id="@+id/itmSettings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"
+        app:showAsAction="always" />
 </menu>

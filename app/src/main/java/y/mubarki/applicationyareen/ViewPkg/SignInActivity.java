@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -112,6 +113,7 @@ public class SignInActivity extends AppCompatActivity {
             etPassword.requestFocus();
             Toast.makeText(this, "invalid account", Toast.LENGTH_SHORT).show();
         }
+
 
     }
 }
