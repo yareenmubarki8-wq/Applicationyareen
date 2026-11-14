@@ -69,7 +69,7 @@ public class YourTaskActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.itmSettings) {
+        if (id == R.id.itmsSettings) {
             Toast.makeText(this, "الإعدادات (Settings)", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.itmsSignOut) {

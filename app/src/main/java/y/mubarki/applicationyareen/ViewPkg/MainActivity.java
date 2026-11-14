@@ -55,24 +55,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
-
-        MaterialToolbar topAppBar = findViewById(R.id.topAppBar);
-        if (topAppBar != null) {
-            topAppBar.setOnMenuItemClickListener(item -> {
-                int id = item.getItemId();
-                if (id == R.id.itmSettings) {
-                    Toast.makeText(this, "الإعدادات (Settings)", Toast.LENGTH_SHORT).show();
-                    return true;
-                } else if (id == R.id.itmsSignOut) {
-                    showYesNoDialog();
-                    return true;
-                }
-                return false;
-            });
-            topAppBar.setOnMenuItemClickListener(item -> handleMenuItemClick(item.getItemId()));
-        }
-
         btnRegisterUser = findViewById(R.id.btnRegisterUser);
         btnSignIn = findViewById(R.id.btnSignIn);
 
@@ -96,22 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             });
         }
-    }
-
-    private boolean handleMenuItemClick(int id) {
-        if (id == R.id.itmSettings) {
-            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.itmsHistory) {
-            Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
-            startActivity(intent);
-            return true;
-        } else if (id == R.id.itmsSignOut) {
-            showYesNoDialog();
-            return true;
-        }
-        return false;
     }
 
     public void showYesNoDialog() {
@@ -145,11 +111,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.itmSettings) {
+        if (item.getItemId() == R.id.itmsSettings) {
             Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
         }
 
-        if (item.getItemId() == R.id.itmsSignOut) {
+        if (item.getItemId() == R.id.itmsSignout) {
             Toast.makeText(this, "Sign out", Toast.LENGTH_SHORT).show();
         }
 
