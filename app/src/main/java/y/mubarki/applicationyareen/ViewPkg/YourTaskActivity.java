@@ -3,11 +3,13 @@ package y.mubarki.applicationyareen.ViewPkg;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -67,20 +69,22 @@ public class YourTaskActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(android.view.MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.itmsSettings) {
-            Toast.makeText(this, "الإعدادات (Settings)", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (id == R.id.itmsSignOut) {
-            Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(YourTaskActivity.this, SignInActivity.class);
-            startActivity(intent);
-            finish();
-            return true;
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.itmsSettings) {
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
         }
-        return super.onOptionsItemSelected(item);
+
+        if (item.getItemId() == R.id.itmsSignout) {
+            Toast.makeText(this, "Sign out", Toast.LENGTH_SHORT).show();
+        }
+
+        if (item.getItemId() == R.id.itmsHistory) {
+            Toast.makeText(this, "History", Toast.LENGTH_SHORT).show();
+        }
+
+        return true;
     }
-}
+
+    }
 
 

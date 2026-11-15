@@ -112,21 +112,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.itmsSettings) {
-            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
-        }
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);        }
 
         if (item.getItemId() == R.id.itmsSignout) {
             Toast.makeText(this, "Sign out", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, SignOutActivity.class);
+            startActivity(i);
         }
 
         if (item.getItemId() == R.id.itmsHistory) {
             Toast.makeText(this, "History", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, HistoryActivity.class);
+            startActivity(i);
         }
 
         return true;
     }
 
     public void onClick(View view) {
+        Toast.makeText(MainActivity.this, "Signing out", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(MainActivity.this, AddTaskActivity.class);
         startActivity(i);
     }
