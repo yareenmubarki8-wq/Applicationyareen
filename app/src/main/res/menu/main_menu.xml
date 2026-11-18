@@ -4,13 +4,17 @@
 
     <item
         android:id="@+id/itmsSignout"
-        android:title="SignOut" />
+        android:title="Sign Out"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/itmsHistory"
-        android:title="History" />
+        android:title="History"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/itmsSettings"
         android:icon="@drawable/ic_settings"
         android:title="Settings"
         app:showAsAction="always" />
+
+
 </menu>
