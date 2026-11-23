@@ -15,6 +15,22 @@
         android:icon="@drawable/ic_settings"
         android:title="Settings"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/ic_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/ic_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+    <item
+        android:id="@+id/ic_favorites"
+        android:icon="@drawable/ic_favorites"
+        android:title="Favorites" />
+    <item
+        android:id="@+id/ic_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Dashboard" />
 
 
 </menu>

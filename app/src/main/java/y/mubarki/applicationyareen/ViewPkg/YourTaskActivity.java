@@ -47,7 +47,6 @@ public class YourTaskActivity extends AppCompatActivity {
 
         // Setup Toolbar Menu Item Listener
         MaterialToolbar topAppBar = findViewById(R.id.topAppBar);
-        if (topAppBar != null)
         if (btnAddNewTask2 != null) {
             btnAddNewTask2.setOnClickListener(v -> {
                 Intent intent = new Intent(YourTaskActivity.this, AddTaskActivity.class);
