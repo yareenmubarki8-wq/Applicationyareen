@@ -4,6 +4,9 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.List;
 
 import y.mubarki.applicationyareen.Model.AppDatabase;
@@ -11,6 +14,8 @@ import y.mubarki.applicationyareen.Model.MyUserTable.MyUser;
 import y.mubarki.applicationyareen.Model.MyUserTable.MyUserQuery;
 
 public class UserRepository {
+    private final FirebaseAuth mAuth;
+    private final FirebaseFirestore db;
 
     private MyUserQuery userQuery;
     private LiveData<List<MyUser>> allUsers;
@@ -20,6 +25,13 @@ public class UserRepository {
         userQuery = db.getMyUserQuery();
         allUsers = userQuery.getAll();
     }
+
+
+    public UserRepository(Application application) {
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+    }
+
 
     public LiveData<List<MyUser>> getallUsers() {
         return allUsers;

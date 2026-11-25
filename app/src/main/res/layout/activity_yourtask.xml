@@ -90,7 +90,7 @@
                     android:layout_height="54dp"
                     android:layout_marginBottom="14dp"
                     android:backgroundTint="#0284C7"
-                    android:text="Add New Task"
+                    android:text="Add Your Advanture"
                     android:textColor="@android:color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"

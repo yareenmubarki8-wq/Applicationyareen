@@ -47,4 +47,4 @@ public interface MyUserQuery {
 
     @Query("SELECT * FROM MyUser WHERE email = :email AND passw = :password LIMIT 1")
     MyUser login(String email, String password);
-}
+    }
