@@ -18,6 +18,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import y.mubarki.applicationyareen.Model.AppDatabase;
 import y.mubarki.applicationyareen.Model.mysubjectstable.MySubject;
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+
+
+
 
         // 1. بناء قاعدة بيانات وارجاع مؤشر عليها
         AppDatabase db = AppDatabase.getDB(getApplicationContext());
@@ -118,13 +123,6 @@ public class MainActivity extends AppCompatActivity {
             return true ;
         }
 
-        if (item.getItemId() == R.id.itmsSignout) {
-            Toast.makeText(this, "Sign out", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(this, SignOutActivity.class);
-            startActivity(i);
-            return true ;
-        }
-
         if (item.getItemId() == R.id.itmsHistory) {
             Toast.makeText(this, "History", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, HistoryActivity.class);
@@ -145,4 +143,8 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MainActivity.this, YourTaskActivity.class);
         startActivity(i);
     }
+
+
+
 }
+
