@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class MyUser {
     @PrimaryKey(autoGenerate = true)
-    public long keyid;
+    public String keyid;
     @ColumnInfo(name = "full_Name")//اعطاء اسم جديد للعامود-الصفة في الجدول
     public String fullName;
     public String email;//بحالة لم يتم اعطاء اسم للعامود يكون اسم الصفه هو اسم العامود
@@ -33,7 +33,40 @@ public class MyUser {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassw() {
+        return passw;
+    }
+
+    public void setPassw(String passw) {
+        this.passw = passw;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getKeyid() {
+        return keyid;
+    }
+
+    public void setKeyid(String keyid) {
+        this.keyid = keyid;
+    }
 }
+
 
 
 

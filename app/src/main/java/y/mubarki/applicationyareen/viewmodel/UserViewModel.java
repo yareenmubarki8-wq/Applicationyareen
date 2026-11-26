@@ -22,25 +22,12 @@ public class UserViewModel extends AndroidViewModel {
         repository = new UserRepository(application);
     }
 
-    public void insert(MyUser user) {
-        repository.insert(user);
-    }
-    public MyUser getUserByEmail(String email) {
-        return repository.getUserByEmail(email);
-    }
-
-    public LiveData<List<MyUser>> getAllUsers() {
-        return allUsers;
-    }
-    public LiveData<List<MyUser>>getUsersByUserId(long userId){
-        return repository.getUsersByUserId(userId);
-    }
-    public LiveData<MyUser> getUserById(long userId) {
-        return repository.getUserById(userId);
-    }
 
     public MyUser login(String email, String password) {
         return repository.login(email, password);
     }
+public MyUser registerUser(MyUser user){
+
+}
 
 }
