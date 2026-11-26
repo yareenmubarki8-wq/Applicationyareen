@@ -17,6 +17,9 @@
         android:padding="20dp">
 
         <!-- Airplane Header Illustration -->
+
+        <!-- Floating Dark Blue Form Card -->
+
         <ImageView
             android:id="@+id/imgLogo"
             android:layout_width="140dp"
@@ -24,10 +27,9 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="Dark Blue Airplane Illustration"
-            android:src="@drawable/ic_blue_airplane_header"
-            android:scaleType="centerInside" />
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_blue_airplane_header" />
 
-        <!-- Floating Dark Blue Form Card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
